@@ -13,6 +13,9 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<jsp:include page='template/navbar.jsp'>
+<jsp:param name='title' value='Sistema Web' />
+</jsp:include>
 	<div class="container">
 	<a class="btn btn-outline-primary" href="/autito/crear" role="button">Crear Auto</a>
 	<br>

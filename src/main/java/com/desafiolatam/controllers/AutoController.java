@@ -33,12 +33,6 @@ public class AutoController {
 	
 	@RequestMapping("")
 	public String home(Model model,HttpSession session) {
-		/*String emailSession= (String) session.getAttribute("emailUsuario");
-		if(session.getAttribute("emailUsuario") != null || emailSession != null) {
-
-		}else {
-			return "redirect:/usuario/login";
-		}*/
 		List<Auto> listaAutos =  autoService.findAll();
 		model.addAttribute("listaAutos", listaAutos);
 		model.addAttribute("auto", new Auto());

@@ -14,6 +14,10 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<jsp:include page='template/navbar.jsp'>
+<jsp:param name='title' value='Sistema Web' />
+<jsp:param name='usuario' value='${usuario.nombre}' />
+</jsp:include>
 	<div class="container">
 	<h1>Crear Producto</h1>
 	<form:form action="/producto/insertar" method="post" modelAttribute="producto">
@@ -31,6 +35,9 @@
 	</form:form>
 	
 	</div>
+<jsp:include page='template/footer.jsp'>
+<jsp:param name='title' value='Sistema Web' />
+</jsp:include>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

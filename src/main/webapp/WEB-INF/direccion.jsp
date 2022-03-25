@@ -19,25 +19,9 @@
 </head>
 
 <body>
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><c:out value="${titulo}"></c:out></a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-link" aria-current="page" href="/">Home</a> <a
-						class="nav-link active" href="#">Registro</a> <a class="nav-link"
-						href="/usuario/showlogin">Login</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+<jsp:include page='template/navbar.jsp'>
+<jsp:param name='title' value='Sistema Web' />
+</jsp:include>
 	<div class="container">
 		<c:if test="${msgError != null}">
 			<div class="alert alert-danger" role="alert">
@@ -81,21 +65,10 @@
 			<input type="submit" class="btn btn-primary"
 				value="asignar Direccion">
 		</form:form>
-
-		<button type="button" role="menuitem" name="Descargar"
-			class="ms-Button ms-Button--commandBar ms-CommandBarItem-link root-103"
-			data-is-focusable="true">
-			<span class="ms-Button-flexContainer flexContainer-104"
-				data-automationid="splitbuttonprimary">
-			<i
-				data-icon-name="download" aria-hidden="true"
-				class="ms-Icon root-33 css-75 ms-Button-icon icon-106"
-				style="font-family: FabricMDL2Icons;"></i>
-				<span
-				class="ms-Button-textContainer textContainer-105"><span
-					class="ms-Button-label label-107" id="id__635">Descargar</span></span></span>
-		</button>
 	</div>
+<jsp:include page='template/footer.jsp'>
+<jsp:param name='title' value='Sistema Web' />
+</jsp:include>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
