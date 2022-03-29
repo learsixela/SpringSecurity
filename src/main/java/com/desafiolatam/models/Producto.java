@@ -18,6 +18,8 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "productos")
 public class Producto {
@@ -32,6 +34,7 @@ public class Producto {
 
 	// ManyToMany (2 OneToMany)
 	// name = "productos_ventas", -> tabla relacional
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "productos_ventas", 
 	joinColumns = @JoinColumn(name = "producto_id"), 

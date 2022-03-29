@@ -38,9 +38,12 @@ public class DireccionController {
 	public String crear(@Valid @ModelAttribute("direccion") Direccion direccion,
 			BindingResult result,
 			Model model) {
-		
+		if(result.hasErrors()) {
+			model.addAttribute("msgError", "Debe ingresar todos los campos");
+		}else {
 		Direccion direccionNuevo = direService.save(direccion);
 		model.addAttribute("direccion", direccionNuevo);
+		}
 		return "redirect:/direccion";
 	}
 

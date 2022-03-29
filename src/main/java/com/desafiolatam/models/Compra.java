@@ -16,6 +16,8 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="compras")
 public class Compra {
@@ -29,6 +31,7 @@ public class Compra {
 	private Float monto;
 	
 	//Relacion ManyToOne (llevara la FK)
+	@JsonBackReference
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="cliente_id")
 	private Cliente cliente;

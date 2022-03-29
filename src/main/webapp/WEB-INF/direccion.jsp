@@ -34,6 +34,9 @@
 			<form:label path="cliente">Cliente</form:label>
 			<br>
 			<form:select path="cliente" class="form-select">
+			<form:option value="0">
+							Seleccione Cliente
+						</form:option>
 				<c:forEach items="${listaClientes}" var="cliente">
 					<c:if test="${cliente.direccion.id == null}">
 						<form:option value="${cliente.id}">

@@ -19,6 +19,8 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="clientes")
 public class Cliente {
@@ -36,14 +38,17 @@ public class Cliente {
 	
 	//Relacion 1 a 1 (OneToOne)
 	//direccion
+	@JsonManagedReference
 	@OneToOne(mappedBy="cliente", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private Direccion direccion;
 	
 	//Relacion 1 a Muchos (OneToMany)
 	//compra - venta
+	@JsonManagedReference
 	@OneToMany(mappedBy="cliente", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Compra> listaCompras;//compras
-
+	
+	@JsonManagedReference
 	@OneToMany(mappedBy="cliente", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Venta> listaVentas;//ventas
 	

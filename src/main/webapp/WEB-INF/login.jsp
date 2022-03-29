@@ -30,7 +30,7 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
 					<a class="nav-link" aria-current="page" href="/">Home</a> <a
-						class="nav-link" href="/usuario/registro">Registro</a> <a
+						class="nav-link" href="/registro">Registro</a> <a
 						class="nav-link active" href="#">Login</a>
 				</div>
 			</div>

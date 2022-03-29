@@ -13,8 +13,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name="direciones")
@@ -23,6 +27,7 @@ public class Direccion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull
 	private String nombre;
 	private Integer numero;
 	private String sector;
@@ -30,8 +35,11 @@ public class Direccion {
 	private String region;
 	
 	//1 a 1 (llevara la FK)
+	@JsonBackReference
 	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="cliente_id")
+	@Valid
+	@NotNull
 	private Cliente cliente;
 	
     @Column(updatable=false)

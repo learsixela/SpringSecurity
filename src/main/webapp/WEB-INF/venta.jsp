@@ -54,10 +54,10 @@
 		<form:form action="/venta/insertar" method="post" modelAttribute="venta">
 			<form:label path="montoTotal">Monto Total:</form:label>
 			<br>
-			<form:input path="marca" class="form-control" />
+			<form:input path="cliente" class="form-control" />
 			<br>
 
-			<form:label path="motor">Motor:</form:label>
+			<form:label path="productos">Producto:</form:label>
 			<br>
 
 			<br>

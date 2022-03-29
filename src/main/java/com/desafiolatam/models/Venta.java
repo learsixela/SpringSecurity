@@ -19,6 +19,9 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "ventas")
 public class Venta {
@@ -27,6 +30,7 @@ public class Venta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@JsonBackReference
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="cliente_id")
 	private Cliente cliente;
@@ -34,6 +38,7 @@ public class Venta {
 	private Double montoTotal;
 	//iva, valor neto...
 	
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name = "productos_ventas", 

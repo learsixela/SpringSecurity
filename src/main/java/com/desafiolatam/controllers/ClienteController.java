@@ -1,5 +1,7 @@
 package com.desafiolatam.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +39,10 @@ public class ClienteController {
 	}
 
 	@RequestMapping("/mostrar")
-	public String mostrar() {
-		return "";
+	public String mostrarClientes(Model model) {
+		List<Cliente> clientes = cService.findAll();
+		model.addAttribute("clientes", clientes);
+		return "redirect:/home";
 	}
 	
 	@RequestMapping("/editar")
